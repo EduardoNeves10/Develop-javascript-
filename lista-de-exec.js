@@ -83,3 +83,30 @@ ehMultiploDe(5,125)
 // ex 08 par ou ímpar
 // crie uma função parOuImpar(n) que recebe um número e retorna 'par' se ele for par e 'ímpar' se ele for impar.
 
+function parOuImpar(numero) {
+    for(i = 0; i <= numero; i++){
+        if( i % 2 == 0){
+            console.log('este número é par', i)
+        } else {
+            console.log('este número é impar', i)
+        }
+    }
+}
+parOuImpar(5)
+
+// ex 09 conversor de moeda
+// crie uma função converteRealParaDolar(reais,taxa) que recebe um valor em reais e uma taxa de câmbio fixa e retorna o valor convertido para dólar.
+
+function converteRealParaDolar(reais, taxa) {
+    return (reais * taxa)
+}
+console.log('Valor convertido USD: ',converteRealParaDolar(10, 5.16))
+
+// ex 10 valor final com taxa
+// crie uma função calcularValorFinal(valor,taxa) que recebe um valor e uma taxa percentual de serviço e retorna o valot total com a taxa aplicada.
+
+function calcularValorFinal(valor, taxa) {
+    return (valor + (valor*(taxa/100)))
+}
+console.log('o valor total da conta com a taxa de serviço R$: ',calcularValorFinal(320,10))
+
