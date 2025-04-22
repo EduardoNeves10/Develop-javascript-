@@ -267,22 +267,138 @@ diaUtil('domingo')
 // crie uma função calcularImc(peso, altura) que recebe peso e altura e retorna o índice de massa corporal (imc)
 
 function calcularImc(peso, altura) {
-    let formula
-    formula = (peso / (altura * altura))
-        if (18.5 <= formula){
-            return console.log(`magreza ${formula}`)
-        } else if (18.6 >formula< 24.9){
-            return console.log(`normal ${formula}`)
-        } else if (25 >formula< 29.9){
-            return console.log(`sobrepeso ${formula}`)
-        } else if (30 >formula< 34.9){
-            return console.log(`obesidade grau 1 ${formula}`)
-        } else if (35 > formula < 39.9){
-            return console.log(`obesidade grau 2 ${formula}`)
-        } else if (formula > 40){
-            return console.log(`obesidade grau 3 ${formula}`)
+    let formula = (peso / (altura * altura))
+    
+        if (formula <= 18.5){
+            return console.log(`Magreza: ${formula} IMC`)
+        } else if (formula <= 24.9){
+            return console.log(`Normal: ${formula} IMC`) 
+        } else if (formula <= 29.9){
+            return console.log(`Sobrepeso: ${formula}IMC`) 
+        } else if (formula <= 34.9){
+            return console.log(`Obsidade grau 1: ${formula} IMC`) 
+        } else if (formula <= 39.9){
+            return console.log(`Obsidade grau 2: ${formula} IMC`) 
+        }  else if (formula >= 40){
+            return console.log(`Obsidade grau 3: ${formula} IMC`) 
         } else {
-            return console.log(`inserir outros dados`)
+            return console.log(`tente novamente`)
         }
+    }
+
+calcularImc(60, 1.95)
+
+// ex 22 conversor de tempo
+// crie uma função converteHorasParaMinutos(horas) que recebe um número de horas e retorna o equivalente em minutos.
+
+function converteHorasParaMinutos(horas) {
+    let minutos = horas*60
+    return console.log(`Equivalente a ${minutos}min`)
 }
-calcularImc(30, 1.80)
+converteHorasParaMinutos(3)
+
+// ex 23 conversor de Passos para Metros
+// crie uma função convertePassosParaMetros(passos) que recebe um número de passos e retorna a distância percorrida em metros. Considere que cada passo tem 0.8 metros.
+
+function convertePassosParaMetros(passos) {
+    let UmPasso = 0.8
+    let metro = 1
+    let conversao = (passos*metro)/UmPasso
+    return console.log(` Em ${passos} passos contém ${conversao} metros`) 
+}
+convertePassosParaMetros(5)
+
+// ex 24 cálculo de tempo de viagem
+// crie uma função calcularTempoViagem(distancia, velocidade) que recebe a distância em km e a velocidade média e retorna o tempo estimado da viagem.
+
+function calcularTempoViagem(distancia, velocidade) {
+    // distancia = km, velocidade = km/h, tempo = h
+    let conversao = (distancia / velocidade)
+    let horaMinutos = (conversao*60)
+    if (horaMinutos >= 60){
+        return console.log(`O tempo médio estimado é ${conversao}horas`)
+    }
+    return console.log(`O tempo médio estimado é ${horaMinutos}min`)    
+}
+calcularTempoViagem(337, 90)
+
+// ex 25 verificação de planos fitness
+// crie uma função verificarPlanoFitness(plano) que recebe um tipo de plano de academia e retorna "acesso liberado" para "premium" e "vip", e "acesso restrito" caso contratio.
+
+function verificarPlanoFitness(plano) {
+    if (plano === "premiun") {
+        return console.log(`Acesso liberado`)
+    } else if (plano === "vip") {
+        return console.log(`Acesso liberado`)
+    } else {
+        return console.log(`Acesso retrito`)
+    }
+}
+verificarPlanoFitness("premiun")
+
+// ex 26 cálculo de alorias queimadas
+// crie uma função calcularCalorias(tipoExercicio, tempo) que calcula calorias gastas com base no tipo de exercicio:
+let corrida =  10 // 'calorias por minuto'
+let caminhada = 5 // 'calorias por minuto'
+let ciclismo = 8  // 'calorias por minuto'
+
+function calcularCalorias(tipoExercicio, tempo) {
+    
+    let caminhadaC = tempo * caminhada
+    let corridaC = tempo * corrida
+    let ciclismoC= tempo * ciclismo
+
+
+    if (tipoExercicio === corrida) {
+        return console.log(`Calorias gasta com base na corrida ${corridaC} cal/min`)
+    } else if (tipoExercicio === caminhada){
+        return console.log(`Calorias gasta com base na caminha ${caminhadaC} cal/min`)
+    } else if (tipoExercicio === ciclismo){
+        return console.log(`Calorias gasta com base no ciclismo ${ciclismoC} cal/min`)
+    }
+}
+calcularCalorias(ciclismo, 60 )
+
+// ex 27 classificação de números positivos, negativos ou neutros
+// crie uma função classificarNumero(n) que recebe um número e retorna se ele é 'Positivo', 'Negativo' ou 'Neutro'.
+
+function classificarNumero(n) {
+    
+
+        if (n > 1) {
+            return console.log(`número ${n} positivo`)
+        } else if (n < 0){
+            return console.log(`número ${n} negativo`)
+        } else if (n === 0){
+            return console.log(`número ${n} neutro na operaão de soma e subtração`)
+        } else if (n === 1){
+            return console.log(`número ${n} neutro na operação de multiplicação e divisão`)
+        } else {
+            return console.log(`tente novamnete`)
+        }
+    }
+
+classificarNumero(1)
+
+// ex 28 cálculo de preço por unidade
+// crie uma função calcularPrecoPorUnidade(precoTotal, quantidade) que recebe o preço total e a quantidade de itens e retorna o preço por unidade.
+
+function calcularPrecoPorUnidade(precoTotal, unidade) {
+    let converso = precoTotal / unidade
+    return console.log(`O valor por unidade R$${converso}`)
+}
+calcularPrecoPorUnidade(600, 50)
+
+// ex 29 verificador de horário comercial
+// crie um função verificarHorarioComercial(hora) que recebe um horário e retorna 'dentro do horário comercial' se estiver entre 9h e 18h, e 'fora do horário comercial' caso contrário.
+
+function verificarHorarioComercial(hora) {
+    if (hora >= 9) {
+        return console.log(`dentro do horário comercial`) 
+    } else if (hora === 18){
+        return console.log(`dentro do horário comercial`)
+    } else {
+        return console.log(`fora do horário comercial`)
+    }
+}
+verificarHorarioComercial(20)
