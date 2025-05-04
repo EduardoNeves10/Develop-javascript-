@@ -29,8 +29,17 @@ const fullnam = 'Maria jose dos santos'
 let arrayNam = fullnam.split(' ') // metódo para fatiar um nome
 console.log(arrayNam) // [ 'Maria', 'jose', 'dos', 'santos' ]
 
-console.log(arrayNam.length)
+console.log(arrayNam.length) // 4
 console.table(arrayNam)
-console.log(arrayNam[0])
+// ┌─────────┬──────────┐
+// │ (index) │ Values   │
+// ├─────────┼──────────┤
+// │ 0       │ 'Maria'  │
+// │ 1       │ 'jose'   │
+// │ 2       │ 'dos'    │
+// │ 3       │ 'santos' │
+// └─────────┴──────────┘
+
+console.log(arrayNam[0]) //maria
 
 console.log(`olá, ${arrayNam[0]} ${arrayNam[2]} ${arrayNam [3]}`)
