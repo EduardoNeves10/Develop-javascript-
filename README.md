@@ -1,1 +1,1 @@
-estudo e desenvolvimento em javascript e react
+ecercícios e pratica em js, html e css
